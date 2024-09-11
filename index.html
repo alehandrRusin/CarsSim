@@ -22,6 +22,12 @@
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">CarsSimulation</div>
       </div>
+      <script>
+        document.addEventListener('wheel', onScroll, false);
+        document.addEventListener('mousemove', onMouse, false);
+        var content = document.getElementsByClassName('webgl-content');
+        function onMouse() { content[0].style['pointer-events'] = 'auto'; }
+        function onScroll() { content[0].style['pointer-events'] = 'none'; }</script>
     </div>
     <script>
 
@@ -57,11 +63,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebB5.loader.js";
+      var loaderUrl = buildUrl + "/CarsSimulation.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebB5.data",
-        frameworkUrl: buildUrl + "/WebB5.framework.js",
-        codeUrl: buildUrl + "/WebB5.wasm",
+        dataUrl: buildUrl + "/CarsSimulation.data",
+        frameworkUrl: buildUrl + "/CarsSimulation.framework.js",
+        codeUrl: buildUrl + "/CarsSimulation.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "CarsSimulation",
